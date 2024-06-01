@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Box</title>
+  <style>
+    .message-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none; /* Esconde a mensagem inicialmente */
+    }
+
+    .close-btn {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box" id="messageBox">
+    <span class="message">Sua mensagem temporária aqui</span>
+    <button class="close-btn" onclick="closeMessage()">Fechar</button>
+  </div>
+
+  <script>
+    function showMessage(message, duration) {
+      var messageBox = document.getElementById("messageBox");
+      var messageSpan = messageBox.querySelector(".message");
+
+      messageSpan.textContent = message;
+      messageBox.style.display = "block";
+
+      setTimeout(function() {
+        messageBox.style.display = "none";
+      }, duration);
+    }
+
+    function closeMessage() {
+      var messageBox = document.getElementById("messageBox");
+      messageBox.style.display = "none";
+    }
+
+    // Exemplo de uso:
+    showMessage("Esta é uma mensagem temporária!", 7000); // Exibe a mensagem por 3 segundos (3000 milissegundos)
+  </script>
+</body>
+</html>

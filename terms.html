@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/logofavicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="font.css">
+    <title>Document</title>
+    <style>
+        * {
+            color: rgb(255, 255, 255);
+            transition: all 0.3s ease;
+        }
+
+        .box-mensagem {
+            display: flex;
+            text-align: center;
+            position: fixed;
+            background-color: #333;
+            right: -400px;
+            width: 300px;
+            top: 150px;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 2px;
+        }
+
+        .mensagem label {
+            color: rgb(87, 87, 255);
+            border-bottom: 1px solid rgb(87, 87, 255);
+        }
+
+        .mensagem label:hover {
+            cursor: pointer;
+            color: rgb(67, 67, 190);
+            border-bottom: 1px solid rgb(67, 67, 190);
+        }
+
+        .box-aparece {
+            right: 20px;
+        }
+
+        ::selection {
+            background-color: white;
+            color: black;
+        }
+
+        body {
+            background-color: black;
+            background-image: url(./background.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: black;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 30px;
+            align-items: center;
+            display: flex;
+            z-index: 99;
+        }
+
+        header a img {
+            width: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+			margin-left: 30px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+            margin-right: 30px;
+        }
+
+        nav a:hover {
+            color: rgb(174, 174, 174);
+        }
+
+        .ip {
+            background-color: #1f1f1f43;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+		.ip label {
+			padding-left: 10px;
+            cursor: text;
+		}
+
+        .ip:hover {
+            cursor: auto;
+            color: white;
+        }
+
+        .copy-button {
+            background-color: #454545;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .copy-button:hover {
+            background-color: #202020;
+        }
+
+		.box-ip {
+			top: 200px;
+			width: 120px;
+		}
+
+        .container {
+            display: flex;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 5%;
+        }
+        .container img{
+            border-radius: 10px;
+            filter: grayscale(100%);
+            padding-right: 20px;
+        }
+
+
+        .container .text {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(128, 128, 128, 0.319);
+            border: 2px solid rgba(0, 0, 0, 0.363);
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 8px;
+            padding-inline: 180px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <img src="./logo.jpg" alt="logo">
+        </a>
+        <nav>
+            <a href="./index.html">Inicio</a>
+            <a href="index.html">Termos</a>
+            <a onclick="LinkDc('https://discord.gg/qj8eJTvw')">Discord</a>
+            <div class="ip">
+                IP do servidor: <label id="server-ip">100.100.100.100</label>
+                <button class="copy-button" onclick="ipcopi()">Copiar IP</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <img style="height: 500px;" src="./12555343.jpg" alt="">
+        <div class="text">
+            <h1>Termos</h1>
+			<p>📎Reembolso: Informamos que não aceitamos reembolsos. Certifique-se de revisar cuidadosamente sua compra, pois todas as vendas são finais.</p>
+            
+            <p>📎Produtos: Na Nebulosa Store, garantimos que todos os nossos produtos passam por verificações rigorosas. E você pode confiar que cada item funciona perfeitamente.</p>
+        
+            <p>📎Termos de serviço: É fortemente aconselhável que você leia atentamente os Termos</p>      
+        </div>
+    </div>
+
+
+    <div class="box-mensagem" id="box">
+        <span class="mensagem">Entre em nosso servidor do <label onclick="LinkDc('https://discord.gg/qj8eJTvw')">Discord</label></span>
+    </div>
+	<div class="box-mensagem box-ip" id="ip">
+        <span class="mensagem span-ip">Link copiado</span>
+    </div>
+
+    <script>
+        function LinkDc(url) {
+            window.open(url);
+        }
+
+        function copyToClipboard() {
+            const ipText = document.getElementById('server-ip').innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+				return
+            }).catch(err => {
+                console.error('Erro ao copiar o IP: ', err);
+            });
+        }
+    </script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
