@@ -163,7 +163,7 @@
         <nav>
             <a href="./">Inicio</a>
             <a href="./terms">Termos</a>
-            <a onclick="LinkDc('https://discord.gg/qj8eJTvw')">Discord</a>
+            <a onclick="LinkDc('https://discord.com/')">Discord</a>
             <div class="ip">
                 IP do servidor: <label id="server-ip">100.100.100.100</label>
                 <button class="copy-button" onclick="ipcopi()">Copiar IP</button>
@@ -176,7 +176,7 @@
         <img style="height: 500px;" src="./12555343.jpg" alt="">
         <div class="text">
             <h1>Termos</h1>
-			<p>📎Reembolso: Informamos que não aceitamos reembolsos. Certifique-se de revisar cuidadosamente sua compra, pois todas as vendas são finais.</p>
+	    <p>📎Reembolso: Informamos que não aceitamos reembolsos. Certifique-se de revisar cuidadosamente sua compra, pois todas as vendas são finais.</p>
             
             <p>📎Produtos: Na Nebulosa Store, garantimos que todos os nossos produtos passam por verificações rigorosas. E você pode confiar que cada item funciona perfeitamente.</p>
         
@@ -200,7 +200,7 @@
         function copyToClipboard() {
             const ipText = document.getElementById('server-ip').innerText;
             navigator.clipboard.writeText(ipText).then(() => {
-				return
+		return
             }).catch(err => {
                 console.error('Erro ao copiar o IP: ', err);
             });
